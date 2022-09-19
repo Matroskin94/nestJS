@@ -1,11 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { ITheme } from "@appTypes/styles";
-import { DARK_THEME, LIGHT_THEME } from "src/constants/styles/theme";
+import { ThemeWrapper } from "@components/ThemeWrapper/ThemeWrapper";
 
-// //** color: ${({ theme }) => theme.text};
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }: { theme: ITheme }) =>
@@ -18,10 +17,10 @@ export const GlobalStyles = createGlobalStyle`
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider theme={LIGHT_THEME}>
+    <ThemeWrapper>
       <GlobalStyles />
       <Component {...pageProps} />
-    </ThemeProvider>
+    </ThemeWrapper>
   );
 }
 

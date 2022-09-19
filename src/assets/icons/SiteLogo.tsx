@@ -3,10 +3,11 @@ import { SVGProps } from "react";
 
 const SvgSiteLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
+    fill="#fff"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 218 652 217"
+    viewBox="0 216 652 217"
     style={{
-      enableBackground: "new 0 218 652 217",
+      enableBackground: "new 0 216 652 217",
     }}
     xmlSpace="preserve"
     {...props}
