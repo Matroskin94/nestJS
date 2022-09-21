@@ -3,8 +3,7 @@ import type { AppProps } from "next/app";
 
 import { createGlobalStyle } from "styled-components";
 import { ITheme } from "@appTypes/styles";
-import { ThemeWrapper } from "@components/ThemeWrapper/ThemeWrapper";
-import { Layout } from "@components/Layout/Layout";
+import { BaseLayout, ThemeWrapper } from "@components/index";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -20,9 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeWrapper>
       <GlobalStyles />
-      <Layout>
+      <BaseLayout>
         <Component {...pageProps} />
-      </Layout>
+      </BaseLayout>
     </ThemeWrapper>
   );
 }

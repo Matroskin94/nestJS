@@ -13,7 +13,7 @@ export const MAIN_LIGHT = "#FFFFFF";
 
 export const TEXT_LIGHT = "#82868A";
 export const TEXT_SECONDARY_LIGHT = "#7F8387";
-export const TEXT_HIGHLIGHT_LIGHT = "#F9FAFA";
+export const TEXT_HIGHLIGHT_LIGHT = "#1a2129";
 
 export const BUTTON_PRIMARY_LIGHT = "#A742EB";
 export const BUTTON_SECONDARY_LIGHT = "#28313A";

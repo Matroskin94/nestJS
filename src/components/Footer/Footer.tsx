@@ -1,10 +1,10 @@
 import { FC } from "react";
+import styled from "styled-components";
 
-export const Footer: FC<{}> = () => {
+const FooterContainer = styled.footer`
+  flex-shrink: 0;
+`;
 
-  return (
-    <div>
-      Footer
-    </div>
-  );
-}
+export const Footer: FC = () => {
+  return <FooterContainer>Footer</FooterContainer>;
+};

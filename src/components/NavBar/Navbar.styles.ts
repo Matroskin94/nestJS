@@ -1,7 +1,7 @@
 import { SiteLogo } from "@assets/icons";
 import styled from "styled-components";
 
-export const NavbarContainer = styled.div`
+export const NavbarContainer = styled.nav`
   position: sticky;
   top: 0;
   left: 0;
@@ -12,6 +12,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: ${({ theme }) => theme.colors.background.primary};
 `;
 
 export const MenuContainer = styled.menu`
@@ -31,6 +32,8 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li<{ isActive: boolean }>`
   font-weight: ${({ isActive }) => (isActive ? 600 : 500)};
+  color: ${({ theme, isActive }) =>
+    isActive ? theme.colors.text.highlighted : ""};
   margin-right: 12px;
   cursor: pointer;
 `;
