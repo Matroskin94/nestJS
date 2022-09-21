@@ -1,17 +1,14 @@
+import { PageHead } from "@components/index";
 import type { NextPage } from "next";
-import Head from "next/head";
-import { Layout } from "@components/Layout/Layout";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <PageHead pageTitle="Next TV films" />
 
       <h1>Next JS</h1>
-    </Layout>
+      <p>Page for films list</p>
+    </>
   );
 };
 

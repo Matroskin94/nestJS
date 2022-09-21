@@ -29,8 +29,9 @@ export const Menu = styled.ul`
   align-items: center;
 `;
 
-export const MenuItem = styled.li`
-  margin-right: 8px;
+export const MenuItem = styled.li<{ isActive: boolean }>`
+  font-weight: ${({ isActive }) => (isActive ? 600 : 500)};
+  margin-right: 12px;
   cursor: pointer;
 `;
 

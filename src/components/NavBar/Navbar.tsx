@@ -1,7 +1,10 @@
 import { ThemeContext } from "@components/ThemeWrapper";
-import { Toggle } from "@components/ui";
+import { Divider, Toggle } from "@components/ui";
+import { IMenuItem, menuItems } from "@constants/routing/menu";
+import { DARK_THEME, LIGHT_THEME } from "@constants/styles/theme";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, useContext, useState } from "react";
-import { DARK_THEME, LIGHT_THEME } from "src/constants/styles/theme";
 import {
   Menu,
   MenuContainer,
@@ -14,6 +17,7 @@ import {
 
 export const Navbar: FC = () => {
   const { changeTheme } = useContext(ThemeContext);
+  const router = useRouter();
   const [isDarkMode, setDarkMode] = useState(false);
 
   const handleDarkModeChange = () => {
@@ -25,9 +29,15 @@ export const Navbar: FC = () => {
     <NavbarContainer>
       <MenuContainer>
         <LogoIcon fill={isDarkMode ? "white" : "black"} />
+        <Divider color="#d7d7d7" marginLeft="8px" />
         <Menu>
-          <MenuItem>Item 1</MenuItem>
-          <MenuItem>Item 2</MenuItem>
+          {menuItems.map((item: IMenuItem) => (
+            <Link key={item.link} href={item.link}>
+              <MenuItem isActive={item.link === router.pathname}>
+                {item.text}
+              </MenuItem>
+            </Link>
+          ))}
         </Menu>
       </MenuContainer>
       <UserPanelContainer>

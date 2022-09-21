@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import { ITheme } from "@appTypes/styles";
 import { ThemeWrapper } from "@components/ThemeWrapper/ThemeWrapper";
+import { Layout } from "@components/Layout/Layout";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeWrapper>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeWrapper>
   );
 }

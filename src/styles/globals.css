@@ -17,10 +17,17 @@ a {
 
 @font-face {
   font-family: 'SpaceGrotesk';
-  src: url('../assets/fonts/SpaceGrotesk-Medium.ttf');
-  font-weight: 400;
+  src: url('../assets/fonts/Exo2-Light.ttf');
+  font-weight: 300;
   font-style: normal;
-  }
+}
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url('../assets/fonts/Exo2-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
