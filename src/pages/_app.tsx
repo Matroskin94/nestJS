@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import { ITheme } from "@appTypes/styles";
 import { BaseLayout, ThemeWrapper } from "@components/index";
+import { reduxWrapper } from "@utils/redux/storeConfig";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -26,4 +27,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+const wrappedApp = reduxWrapper.withRedux(MyApp);
+
+export default wrappedApp;

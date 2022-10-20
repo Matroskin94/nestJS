@@ -1,4 +1,6 @@
 import { Footer } from "@components/Footer/Footer";
+import { useTypedSelector } from "@utils/redux/hooks/useTypedSelector";
+import { getIsSideBarOpen } from "@utils/redux/slices/sideBar.slice";
 import { FC } from "react";
 import styled from "styled-components";
 
@@ -22,11 +24,11 @@ const MainPartWrapper = styled.main`
 
 const SidePart = styled.aside<{ isVisible: boolean }>`
   background: darkgrey;
-  width: 360px;
-  min-width: 360px;
   height: 100%;
   overflow-y: auto;
-  display: ${({ isVisible }) => (isVisible ? "block" : "none")};
+  width: ${({ isVisible }) => (isVisible ? "360px" : "0px")};
+  min-width: ${({ isVisible }) => (isVisible ? "360px" : "0px")};
+  transition: all 0.5s ease;
 `;
 
 const MainContent = styled.main`
@@ -37,6 +39,8 @@ export const ListWithInfoLayout: FC<IListWithInfoLayout> = ({
   mainPart,
   sidePart,
 }) => {
+  const isSideBarOpened = useTypedSelector(getIsSideBarOpen);
+
   return (
     <LayoutContainer>
       <MainPartWrapper>
@@ -45,7 +49,7 @@ export const ListWithInfoLayout: FC<IListWithInfoLayout> = ({
           <Footer />
         </>
       </MainPartWrapper>
-      <SidePart isVisible>{sidePart}</SidePart>
+      <SidePart isVisible={isSideBarOpened}>{sidePart}</SidePart>
     </LayoutContainer>
   );
 };
